@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main class="centered">
+            <% if (isAuthenticated) { %>    
+                <h1>Welcome <%= user.firstName %></h1>
+                <hr>
+                <p>First Name: <%= user.firstName %></p>
+                <p>Surname: <%= user.surName %></p>
+                <p>Username: <%= user.username %></p>
+                <p>E-mail: <%= user.email %></p>
+                <p>Date of Birth: <%= userDOB %></p>
+                <p>Age: <%= user.age %></p>
+
+                <form class="delete-form" action="/deleteUser" method="POST">
+                    <input type="text" hidden name="userEmail" id="" value=<%= user.email %> >
+                    <button class="btn" type="submit">
+                        Delete your account
+                    </button>
+                </form>
+            <% } else {%>
+                <h1>Please signup or login</h1>
+            <% } %>
+        </main>
+        <%- include('../includes/end.ejs') %>
