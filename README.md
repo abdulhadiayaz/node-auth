@@ -1,3 +1,6 @@
+Configure database in config/config.json
+Replace database credentials with that of yours.
+
 Install all the dependencies:
 
     npm install
